@@ -17,6 +17,12 @@ using namespace std;
 // will sum to be always less than or equal to the n elements in the input list.
 // BigO is thus O(n^2)
 //
+// If I would have taken advantage of knowing all the numbers are unsigned 8-bit integers, then I could use the number as an index into a
+// simple array.  Then instead of iterating over a list, I could update a frequency counter variable directly to keep track of occurrences
+// of each value.
+// After that I could then iterate over the fixed length list (256 elements) to find all the unique values.  In order to determine the first
+// value I would need to flag incoming order as well.
+// The BigO operation would be O(1) since the length of the array is fixed to 256 elements.
 
 void printFirstUniqueValue(vector<int>& list, bool verbose = false){
 	std::vector<int>::iterator listIt, blIt, pUVIt;
